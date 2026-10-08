@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/cache/
+models/*.pkl
+reports/
+.pytest_cache/
+*.egg-info/
+data/odds/
+logs/
+data/bets/

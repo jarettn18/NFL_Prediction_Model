@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nflpred"
+version = "0.1.0"
+description = "NFL game outcome prediction: win probability, spread, and total"
+requires-python = ">=3.11"
+dependencies = [
+    "nflreadpy",
+    "polars",
+    "pandas",
+    "pyarrow",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "lightgbm",
+    "requests",
+    "typer",
+    "rich",
+    "tabulate",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+nflpred = "nflpred.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
